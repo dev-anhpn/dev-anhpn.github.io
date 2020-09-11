@@ -214,7 +214,7 @@
 /* Header Notification */
 .header__notify {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     top: 118%;
     right: 0;
     width: 404px;
@@ -226,7 +226,7 @@
     /* transform-origin: top right; */
     /* transform-origin: 90% top; */
     transform-origin: calc(100% - 28px) top;
-    animation: headerNotifyGrowth ease-in 0.5s;
+    animation: headerNotifyGrowth ease-in 0.2s;
     will-change: opacity, transform;
     display: none;
 }
@@ -482,11 +482,15 @@
     display: flex;
     align-items: center;
     margin: 0 8px;
+    position: relative;
 }
 
 .header__mobile-search {
     padding: 0 12px;
     display: none;
+    position: absolute;
+    left: 21px;
+    top: 13px;
 }
 
 .header__mobile-search-icon {
@@ -622,7 +626,8 @@
     padding-left: 0;
     list-style: none;
     max-height: 56vh; /*View port height*/
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+    overflow-y: auto;
 }
 
 .header__cart-item {
@@ -1404,4 +1409,61 @@ i.home-product-item__like-icon-fill {
     font-size: 1.4rem;
     color: #737373;
     text-align: center;
+}
+
+.mobile__menu-icon {
+    font-size: 2.4rem;
+    color: #fff;
+}
+
+.mobile__menu-label {
+    display: none;
+}
+
+.nav__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+.nav__mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: white;
+    z-index: 11;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform linear 0.2s, opacity linear 0.2s;
+}
+
+.nav__mobile-list {
+    padding-left: 11px;
+}
+
+.nav__mobile-close--icon {
+    font-size: 2.6rem;
+    color: #666;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.nav-input:checked ~ .nav__overlay {
+    display: block;
+}
+
+.nav-input:checked ~ .nav__mobile {
+    transform: translateX(0);
+    opacity: 1;
 }

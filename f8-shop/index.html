@@ -133,8 +133,32 @@
                         </li>
                     </ul>
                 </nav>
+
+                <input type="checkbox" hidden class="nav-input" id="nav__mobile-input">
+                <div class="nav__mobile">
+                    <nav class="nav__mobile-list">
+                        <h3 class="category__heading">Danh mục</h3>
+
+                        <ul class="category-list">
+                            <li class="category-item category-item--active">
+                                <a href="#" class="category-item__link">Trang điểm mặt</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-item__link">Trang điểm môi</a>
+                            </li>
+                            <li class="category-item">
+                                <a href="#" class="category-item__link">Trang điểm mắt</a>
+                            </li>
+                        </ul>
+                        <label for="nav__mobile-input"><i class="nav__mobile-close--icon fas fa-times"></i></label>
+
+                    </nav>
+                </div>
+                <label for="nav__mobile-input" class="nav__overlay"></label>
                 <!-- Header with search -->
                 <div class="header-with-search">
+                    <label class="mobile__menu-label" for="nav__mobile-input"><i
+                            class="fas fa-bars mobile__menu-icon"></i></label>
                     <label for="mobile-search-checkbox" class="header__mobile-search">
                         <i class="header__mobile-search-icon fas fa-search"></i>
                     </label>
